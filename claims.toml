@@ -1,0 +1,484 @@
+[[claim]]
+id = 'S39-time'
+question = 'When did the eclipses happen, and how deep were they?'
+statement = "The sector 39 eclipse is centred at BTJD 2377.1543"
+command = 'eclipses'
+path = ['S39', 'time']
+expected = 2377.1543
+tolerance = 5e-05
+
+[[claim]]
+id = 'S102-time'
+question = 'When did the eclipses happen, and how deep were they?'
+statement = "The sector 102 eclipse is centred at BTJD 4131.0663"
+command = 'eclipses'
+path = ['S102', 'time']
+expected = 4131.0663
+tolerance = 5e-05
+
+[[claim]]
+id = 'S103-time'
+question = 'When did the eclipses happen, and how deep were they?'
+statement = "The sector 103 eclipse is centred at BTJD 4169.8482"
+command = 'eclipses'
+path = ['S103', 'time']
+expected = 4169.8482
+tolerance = 5e-05
+
+[[claim]]
+id = 'S39-depth-percent'
+question = 'When did the eclipses happen, and how deep were they?'
+statement = "The sector 39 eclipse is 8.5 percent deep"
+command = 'eclipses'
+path = ['S39', 'depth']
+expected = 8.5
+tolerance = 0.05
+scale = 100.0
+
+[[claim]]
+id = 'S102-depth-percent'
+question = 'When did the eclipses happen, and how deep were they?'
+statement = "The sector 102 eclipse is 15.4 percent deep"
+command = 'eclipses'
+path = ['S102', 'depth']
+expected = 15.4
+tolerance = 0.05
+scale = 100.0
+
+[[claim]]
+id = 'S103-depth-percent'
+question = 'When did the eclipses happen, and how deep were they?'
+statement = "The sector 103 eclipse is 8.5 percent deep"
+command = 'eclipses'
+path = ['S103', 'depth']
+expected = 8.5
+tolerance = 0.05
+scale = 100.0
+
+[[claim]]
+id = 'shallow-eclipses-separation'
+question = 'Which orbital periods fit the eclipses?'
+statement = "The two 8.5 percent eclipses are 1792.694 days apart"
+command = 'forecast'
+path = ['separation']
+expected = 1792.694
+tolerance = 0.0005
+
+[[claim]]
+id = 'periods-that-fit'
+question = 'Which orbital periods fit the eclipses?'
+statement = "Two periods fit the four eclipses, those of 1792.694 days divided by N = 13 and 26"
+command = 'alias'
+path = ['survivors']
+expected = [13, 26]
+kind = 'equals'
+
+[[claim]]
+id = 'values-of-n-tested'
+question = 'Which orbital periods fit the eclipses?'
+statement = "3,200 values of N were tested"
+command = 'alias'
+path = ['tested_values']
+expected = 3200
+tolerance = 0
+
+[[claim]]
+id = 'values-of-n-rejected'
+question = 'Which orbital periods fit the eclipses?'
+statement = "3,198 of those values of N are rejected"
+command = 'alias'
+path = ['rejected']
+expected = 3198
+tolerance = 0
+
+[[claim]]
+id = 'forecast-time'
+question = 'When is the next deciding eclipse?'
+statement = "If the period is 68.95 days, the next deciding eclipse is centred at BTJD 4475.8152"
+command = 'forecast'
+path = ['deciding', 'time']
+expected = 4475.8152
+tolerance = 5e-05
+
+[[claim]]
+id = 'forecast-date'
+question = 'When is the next deciding eclipse?'
+statement = "That eclipse falls on 2027-03-11"
+command = 'forecast'
+path = ['deciding', 'date']
+expected = '2027-03-11'
+kind = 'equals'
+
+[[claim]]
+id = 'asas-pooled-amplitude'
+question = 'Did ASAS-3 see the star fainter at those times?'
+statement = "Pooled over the epochs of 137.90 days, the ASAS-3 deficit is 1.03 times the TESS depth"
+command = 'asas-pooled'
+path = ['shift_tests', 'N13_all', 'A']
+expected = 1.03
+tolerance = 0.005
+
+[[claim]]
+id = 'asas-pooled-p'
+question = 'Did ASAS-3 see the star fainter at those times?'
+statement = "That deficit has a chance probability of 0.011"
+command = 'asas-pooled'
+path = ['shift_tests', 'N13_all', 'p_A']
+expected = 0.011
+tolerance = 0.0005
+
+[[claim]]
+id = 'asas-ten-nights-amplitude'
+question = 'Did ASAS-3 see the star fainter at those times?'
+statement = "On the ten or so nights that only 68.95 days predicts, the ASAS-3 deficit is 1.04 times the TESS depth"
+command = 'asas-preregistered'
+path = ['amplitude']
+expected = 1.04
+tolerance = 0.005
+
+[[claim]]
+id = 'asas-ten-nights-p'
+question = 'Did ASAS-3 see the star fainter at those times?'
+statement = "That deficit has a chance probability of 0.006"
+command = 'asas-preregistered'
+path = ['p']
+expected = 0.006
+tolerance = 0.0005
+
+[[claim]]
+id = 'asas-ten-nights-p-no-exclusion'
+question = 'Did ASAS-3 see the star fainter at those times?'
+statement = "With no shift excluded from the 20,000, that chance probability is 0.012"
+command = 'asas-preregistered'
+path = ['p_no_exclusion']
+expected = 0.012
+tolerance = 0.0005
+
+[[claim]]
+id = 'asassn-first-measurement'
+question = 'Did ASAS-SN see the star fainter at those times?'
+statement = "The first measurement is at HJD 2456777.77 (2014 April 30)"
+command = 'asassn'
+path = ['first_hjd']
+expected = 2456777.77
+tolerance = 0.005
+
+[[claim]]
+id = 'asassn-last-measurement'
+question = 'Did ASAS-SN see the star fainter at those times?'
+statement = "The last measurement is at HJD 2461338.25 (2026 October 24)"
+command = 'asassn'
+path = ['last_hjd']
+expected = 2461338.25
+tolerance = 0.005
+
+[[claim]]
+id = 'asassn-measurements'
+question = 'Did ASAS-SN see the star fainter at those times?'
+statement = "The file holds 1,523 measurements, from four cameras"
+command = 'asassn'
+path = ['measurements']
+expected = 1523
+tolerance = 0
+
+[[claim]]
+id = 'asassn-nights'
+question = 'Did ASAS-SN see the star fainter at those times?'
+statement = "The measurements make 1,410 camera-nights, each the mean of one camera's measurements on one day"
+command = 'asassn'
+path = ['nights']
+expected = 1410
+tolerance = 0
+
+[[claim]]
+id = 'asassn-both-periods-nights'
+question = 'Did ASAS-SN see the star fainter at those times?'
+statement = "The ASAS-SN photometry (the machine-learning photometry of saturated stars) has 13 camera-nights in the eclipses that both periods predict"
+command = 'asassn'
+path = ['even', 'nights']
+expected = 13
+tolerance = 0
+
+[[claim]]
+id = 'asassn-both-periods-amplitude'
+question = 'Did ASAS-SN see the star fainter at those times?'
+statement = "On those nights the star is fainter at the eclipses both periods predict by more than the TESS depths: 2.07 times"
+command = 'asassn'
+path = ['even', 'amplitude']
+expected = 2.07
+tolerance = 0.005
+
+[[claim]]
+id = 'asassn-both-periods-p'
+question = 'Did ASAS-SN see the star fainter at those times?'
+statement = "None of the 20,000 shifted ephemerides gives as large a deficit, so p is below 5 x 10^-5 over shifted ephemerides"
+command = 'asassn'
+path = ['even', 'shifts_at_least_as_large']
+expected = 0
+kind = 'at_most'
+tolerance = 0
+
+[[claim]]
+id = 'asassn-68-95-only-nights'
+question = 'Did ASAS-SN see the star fainter at those times?'
+statement = "The same photometry has 14 camera-nights in the eclipses that only 68.95 days predicts"
+command = 'asassn'
+path = ['odd', 'nights']
+expected = 14
+tolerance = 0
+
+[[claim]]
+id = 'asassn-68-95-only-amplitude'
+question = 'Did ASAS-SN see the star fainter at those times?'
+statement = "On those nights the star is fainter by 0.89 times the TESS depths"
+command = 'asassn'
+path = ['odd', 'amplitude']
+expected = 0.89
+tolerance = 0.005
+
+[[claim]]
+id = 'asassn-68-95-only-error'
+question = 'Did ASAS-SN see the star fainter at those times?'
+statement = "The error of that amplitude, widened by the root of the chi-square per degree of freedom, is 0.37"
+command = 'asassn'
+path = ['odd', 'scaled_error']
+expected = 0.37
+tolerance = 0.005
+
+[[claim]]
+id = 'asassn-68-95-only-p'
+question = 'Did ASAS-SN see the star fainter at those times?'
+statement = "That deficit has a chance probability of 0.031, which the rule fixed beforehand counts as undecided"
+command = 'asassn'
+path = ['odd', 'p']
+expected = 0.031
+tolerance = 0.0005
+
+[[claim]]
+id = 'asassn-before-drift-68-95-only-amplitude'
+question = 'Did ASAS-SN see the star fainter at those times?'
+statement = "Checked after the drift of the cameras was seen, on the nights before BTJD 3900 (a robustness check, not part of the rule fixed beforehand): on the 12 camera-nights in the eclipses that only 68.95 days predicts the star is fainter by 1.00 times the TESS depths"
+command = 'asassn'
+path = ['before_3900', 'odd', 'amplitude']
+expected = 1.0
+tolerance = 0.005
+
+[[claim]]
+id = 'asassn-before-drift-68-95-only-error'
+question = 'Did ASAS-SN see the star fainter at those times?'
+statement = "The error of that amplitude, widened by the root of the chi-square per degree of freedom, is 0.18"
+command = 'asassn'
+path = ['before_3900', 'odd', 'scaled_error']
+expected = 0.18
+tolerance = 0.005
+
+[[claim]]
+id = 'asassn-before-drift-68-95-only-p'
+question = 'Did ASAS-SN see the star fainter at those times?'
+statement = "That deficit has a chance probability of 0.0011 over 20,000 shifted ephemerides"
+command = 'asassn'
+path = ['before_3900', 'odd', 'p']
+expected = 0.0011
+tolerance = 0.0001
+
+[[claim]]
+id = 'asassn-before-drift-both-periods-amplitude'
+question = 'Did ASAS-SN see the star fainter at those times?'
+statement = "Checked after the drift of the cameras was seen, on the nights before BTJD 3900 (a robustness check, not part of the rule fixed beforehand): on the 10 camera-nights in the eclipses that both periods predict the star is fainter by 1.75 times the TESS depths"
+command = 'asassn'
+path = ['before_3900', 'even', 'amplitude']
+expected = 1.75
+tolerance = 0.005
+
+[[claim]]
+id = 'asassn-before-drift-both-periods-error'
+question = 'Did ASAS-SN see the star fainter at those times?'
+statement = "The error of that amplitude, widened by the root of the chi-square per degree of freedom, is 0.23"
+command = 'asassn'
+path = ['before_3900', 'even', 'scaled_error']
+expected = 0.23
+tolerance = 0.005
+
+[[claim]]
+id = 'asassn-before-drift-both-periods-shifts'
+question = 'Did ASAS-SN see the star fainter at those times?'
+statement = "None of the 20,000 shifted ephemerides gives as large a deficit"
+command = 'asassn'
+path = ['before_3900', 'even', 'shifts_at_least_as_large']
+expected = 0
+kind = 'at_most'
+tolerance = 0
+
+[[claim]]
+id = 'fourth-eclipse-time'
+question = 'Is the fourth eclipse in the flagged cadences of sector 93?'
+statement = "The deep eclipse in the flagged cadences of sector 93 is centred at BTJD 3855.2675"
+command = 'flagged'
+path = ['fourth_eclipse', 'time']
+expected = 3855.2675
+tolerance = 0.0005
+
+[[claim]]
+id = 'fourth-eclipse-depth-ratio'
+question = 'Is the fourth eclipse in the flagged cadences of sector 93?'
+statement = "That eclipse is 1.003 times as deep as the sector 102 eclipse in the SAP flux"
+command = 'flagged'
+path = ['fourth_eclipse', 'depth_ratio']
+expected = 1.003
+tolerance = 0.005
+
+[[claim]]
+id = 'egress-depth-ratio'
+question = 'Does sector 101 show the egress that only 68.95 days predicts?'
+statement = "At the time that only 68.95 days predicts, the start of sector 101 shows an egress 0.997 times as deep as the shallow eclipses"
+command = 'flagged'
+path = ['egress', 'depth_ratio']
+expected = 0.997
+tolerance = 0.005
+
+[[claim]]
+id = 'search-peak-days'
+question = 'Does the discovery search flag the star?'
+statement = "The strongest peak of the discovery search for this star is at 12.897 days"
+command = 'search'
+requires = 'search'
+path = ['period_days']
+expected = 12.897
+tolerance = 0.003
+
+[[claim]]
+id = 'search-sde'
+question = 'Does the discovery search flag the star?'
+statement = "That peak has a signal detection efficiency of 10"
+command = 'search'
+requires = 'search'
+path = ['sde']
+expected = 10.0
+tolerance = 1.0
+
+[[claim]]
+id = 'companion-radius-lower-bound'
+question = 'Is the companion a star?'
+statement = "Whichever eclipse is B in front of A, B has a radius of at least 0.62 solar radii (the shallow eclipse, with the smallest radius of A from the two-star fits and limb darkening)"
+command = 'radius'
+path = ['conservative', 'radius_of_b']
+expected = 0.62
+tolerance = 0.005
+
+[[claim]]
+id = 'qlp-largest-depth-difference-pp'
+question = 'Does a second reduction of the data (QLP) agree?'
+statement = "The QLP eclipse depths differ from the SPOC ones by at most 1.6 percentage points"
+command = 'qlp'
+path = ['largest_depth_difference_pp']
+expected = 1.6
+kind = 'at_most'
+
+# The QLP times from the second half of sector 99 to the end of sector 104 carry a barycentric error (the correction used velocity instead of position) and corrected files are being redelivered: https://archive.stsci.edu/hlsp/qlp
+[[claim]]
+id = 'qlp-sector-39-time-difference-over-error'
+question = 'Does a second reduction of the data (QLP) agree?'
+statement = "The QLP mid-time of the sector 39 eclipse is within 0.6 combined errors of the SPOC one; the other sectors are not compared, since the QLP times from sector 99 to 104 carry a barycentric error"
+command = 'qlp'
+path = ['sector_39_time_difference_over_error']
+expected = 0.6
+kind = 'at_most'
+
+[[claim]]
+id = 'qlp-sector-102-ramp-magnitude'
+question = 'Does a second reduction of the data (QLP) agree?'
+statement = "The QLP light curve has no baseline ramp beside the sector 102 eclipse (under 0.001)"
+command = 'qlp'
+path = ['sector_102_ramp', 'qlp']
+expected = 0.001
+kind = 'at_most'
+
+[[claim]]
+id = 'spoc-sap-sector-102-ramp-magnitude'
+question = 'Does a second reduction of the data (QLP) agree?'
+statement = "The SPOC SAP light curve has no baseline ramp beside the sector 102 eclipse (under 0.001)"
+command = 'qlp'
+path = ['sector_102_ramp', 'spoc_sap']
+expected = 0.001
+kind = 'at_most'
+
+[[claim]]
+id = 'pdcsap-sector-102-ramp'
+question = 'Does a second reduction of the data (QLP) agree?'
+statement = "The SPOC PDCSAP light curve has a baseline ramp of 0.0049 beside the sector 102 eclipse"
+command = 'qlp'
+path = ['sector_102_ramp', 'pdcsap']
+expected = 0.0049
+tolerance = 0.00005
+
+[[claim]]
+id = 'neowise-w2-minimum-offset'
+question = 'Did NEOWISE see an eclipse that only 68.95 days predicts?'
+statement = "The faintest W2 exposure of the NEOWISE visit that holds an eclipse that only 68.95 days predicts is within 0.01 days of the predicted time, BTJD -74.870"
+command = 'neowise'
+path = ['w2_minimum_offset_days']
+expected = 0.01
+kind = 'at_most'
+
+[[claim]]
+id = 'neowise-w2-window-minus-other'
+question = 'Did NEOWISE see an eclipse that only 68.95 days predicts?'
+statement = "In that visit the 8 W2 exposures inside the eclipse are 0.133 magnitudes fainter than its 5 other exposures"
+command = 'neowise'
+path = ['w2_window_minus_other']
+expected = 0.133
+tolerance = 0.0005
+
+[[claim]]
+id = 'neowise-comparison-largest-shift'
+question = 'Did NEOWISE see an eclipse that only 68.95 days predicts?'
+statement = "None of the 11 other stars of AllWISE W2 6 to 11 in the same frames fades by more than 0.02 magnitudes inside those frames compared with outside them"
+command = 'neowise'
+path = ['comparison_largest_shift']
+expected = 0.02
+kind = 'at_most'
+
+[[claim]]
+id = 'neowise-visits-tested'
+question = 'Did NEOWISE see an eclipse that only 68.95 days predicts?'
+statement = "Of the 28 visits, 23 have at least 12 W2 exposures, enough to test"
+command = 'neowise'
+path = ['visit_dips', 'visits_tested']
+expected = 23
+tolerance = 0
+
+[[claim]]
+id = 'neowise-eclipse-visit-dip'
+question = 'Did NEOWISE see an eclipse that only 68.95 days predicts?'
+statement = "The largest dip of 8 consecutive W2 exposures of the visit with the eclipse is 0.133 magnitudes"
+command = 'neowise'
+path = ['visit_dips', 'eclipse_visit_dip']
+expected = 0.133
+tolerance = 0.0005
+
+[[claim]]
+id = 'neowise-other-visits-largest-dip'
+question = 'Did NEOWISE see an eclipse that only 68.95 days predicts?'
+statement = "The largest such dip in the 22 other visits is at most 0.032 magnitudes"
+command = 'neowise'
+path = ['visit_dips', 'largest_other_dip']
+expected = 0.032
+kind = 'at_most'
+
+[[claim]]
+id = 'neowise-visit-sd'
+question = 'Did NEOWISE see an eclipse that only 68.95 days predicts?'
+statement = "The median standard deviation of W2 in a visit is 0.019 magnitudes"
+command = 'neowise'
+path = ['visit_dips', 'median_visit_sd']
+expected = 0.019
+tolerance = 0.0005
+
+[[claim]]
+id = 'neowise-eclipse-visit-spacing'
+question = 'Did NEOWISE see an eclipse that only 68.95 days predicts?'
+statement = "The exposures of the visit with the eclipse are 94.8 minutes apart"
+command = 'neowise'
+path = ['visit_dips', 'eclipse_visit_spacing_minutes']
+expected = 94.8
+tolerance = 0.05

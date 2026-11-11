@@ -1,0 +1,10 @@
+data/*
+!data/checksums.json
+!data/asassn/
+!data/asassn/asassn_v1_saturated.csv
+out/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/

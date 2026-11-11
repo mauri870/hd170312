@@ -1,0 +1,44 @@
+[project]
+name = "hd170312"
+version = "0.1.0"
+description = "Reproduces the numbers of a Research Note on HD 170312 (TIC 292292315) from public TESS and ASAS-3 light curves."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "numpy==2.5.4",
+    "scipy==1.18.1",
+    "astropy==8.0.1",
+    "matplotlib==3.11.2",
+]
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[dependency-groups]
+dev = ["pytest==9.1.1", "ruff"]
+search = ["transitgpu @ git+https://github.com/mauri870/transitgpu@v0.4.0", "torch"]
+
+[project.scripts]
+hd170312 = "hd170312.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/hd170312"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 160
