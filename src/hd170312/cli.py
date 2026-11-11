@@ -79,7 +79,8 @@ def forecast(arguments):
     events = [{"time": e["time"], "error": e["error"], "kind": e["kind"]} for e in found.values()]
     rows = module.forecast(events)
     separation = [e for e in events if e["kind"] == "shallow"][-1]["time"] - next(e for e in events if e["kind"] == "shallow")["time"]
-    return output("forecast", {"separation": separation, "separation_over_139": separation / 139, "deciding": module.deciding_eclipse(rows), "sector_114": module.SECTOR_114, "by_N": rows, "predicted_eclipses_in_the_window": module.minimum_gap(rows)})
+    ground = module.only_shortest(events, low=module.btjd_of(module.NOTE_DATE), high=module.SECTOR_114[0])
+    return output("forecast", {"separation": separation, "separation_over_139": separation / 139, "deciding": module.deciding_eclipse(rows), "sector_114": module.SECTOR_114, "by_N": rows, "predicted_eclipses_in_the_window": module.minimum_gap(rows), "eccentricity": module.eccentricity(rows), "only_68_95_before_sector_114": ground})
 
 
 @command

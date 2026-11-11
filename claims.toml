@@ -110,6 +110,33 @@ expected = '2027-03-11'
 kind = 'equals'
 
 [[claim]]
+id = 'eccentricity-68-95'
+question = 'Which orbital periods fit the eclipses?'
+statement = "At 68.95 days the deep eclipse falls at phase 0.44 of the shallow one, so the eccentricity is at least 0.10 (|e cos w|, to first order)"
+command = 'forecast'
+path = ['eccentricity', '26', 'e_cos_omega_at_least']
+expected = 0.098
+tolerance = 0.002
+
+[[claim]]
+id = 'eccentricity-137-90'
+question = 'Which orbital periods fit the eclipses?'
+statement = "At 137.90 days the deep eclipse falls at phase 0.72 of the shallow one, so the eccentricity is at least 0.34 (|e cos w|, to first order)"
+command = 'forecast'
+path = ['eccentricity', '13', 'e_cos_omega_at_least']
+expected = 0.344
+tolerance = 0.002
+
+[[claim]]
+id = 'ground-eclipse-date'
+question = 'When is the next deciding eclipse?'
+statement = "Before TESS sector 114, the one eclipse that only 68.95 days predicts is a shallow eclipse on 2026 December 2"
+command = 'forecast'
+path = ['only_68_95_before_sector_114', 0, 'date']
+expected = '2026-12-02'
+kind = 'equals'
+
+[[claim]]
 id = 'asas-pooled-amplitude'
 question = 'Did ASAS-3 see the star fainter at those times?'
 statement = "Pooled over the epochs of 137.90 days, the ASAS-3 deficit is 1.03 times the TESS depth"
