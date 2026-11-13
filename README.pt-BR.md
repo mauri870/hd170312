@@ -1,6 +1,6 @@
-# HD 170312 é uma binária eclipsante brilhante e de longo período
+# HD 170312: uma binária eclipsante brilhante com período de 69 ou 138 dias
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24110892.svg)](https://doi.org/10.5281/zenodo.24110892)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24110891.svg)](https://doi.org/10.5281/zenodo.24110891)
 
 [English](README.md)
 
@@ -18,7 +18,7 @@ Na noite de 1 para 2 de dezembro de 2026 só 68,95 dias prevê um eclipse, centr
 
 Os eclipses também informam sobre as duas estrelas. A mais brilhante, A, é uma estrela F evoluída, com temperatura efetiva de cerca de 6.600 K e cerca de 3,5 vezes o raio do Sol segundo o TESS Input Catalog. Modelos de duas estrelas eclipsantes ajustados aos eclipses exigem que A seja de 24 a 34 por cento menor que isso. O catálogo atribui toda a luz do sistema a A, o que torna o seu raio grande demais, mas não se sabe se isso explica toda a diferença. Os modelos se ajustam igualmente bem aos eclipses nos dois períodos, então a forma dos eclipses não permite escolher entre eles. Os eclipses bloqueiam 8,5 e 15 por cento da luz do sistema, de modo que a companheira, B, deve ter pelo menos 0,95 vez o raio do Sol com o raio de catálogo de A, e pelo menos 0,62 com o menor raio de A que os modelos admitem, muito maior que qualquer planeta ou anã marrom, que chegam a cerca de 0,2. Trata-se de limites inferiores: os eclipses têm o fundo arredondado, como num eclipse rasante, em que uma estrela apenas tangencia o disco da outra, e a própria luz de B torna as quedas mais rasas. Os eclipses têm ainda duas profundidades, uma para cada estrela que passa na frente, o que indica que B emite luz própria. O eclipse profundo não cai no meio do intervalo entre dois rasos, então a órbita é excêntrica: excentricidade de pelo menos 0,10 se o período for de 68,95 dias, e de pelo menos 0,34 se for de 137,90.
 
-Este repositório baixa os dados públicos e reproduz os principais números da Research Note em `note/`. Preprint: [doi:10.5281/zenodo.24110892](https://doi.org/10.5281/zenodo.24110892).
+Este repositório baixa os dados públicos e reproduz os principais números da Research Note em `note/`. Preprint: [doi:10.5281/zenodo.24110891](https://doi.org/10.5281/zenodo.24110891).
 
 ![Os eclipses de HD 170312 e os períodos compatíveis com eles](note/figures/events.png)
 
@@ -53,6 +53,7 @@ Nenhum catálogo lista HD 170312 como binária eclipsante. Estes foram consultad
 | Tabelas de variabilidade do [Gaia](https://www.cosmos.esa.int/web/gaia) DR3 | nenhuma linha |
 | [SIMBAD](https://simbad.harvard.edu/simbad/sim-id?Ident=HD+170312) | uma estrela simples de tipo F3 IV/V, com 4 referências |
 | [ExoFOP](https://exofop.ipac.caltech.edu/tess/target.php?id=292292315) | nenhum TESS Object of Interest |
+| [Planet Hunters TESS](https://www.zooniverse.org/projects/nora-dot-eisner/planet-hunters-tess/talk/2112/2092270) (Eisner et al. 2021) | voluntários a marcaram como #eclipsingbinary: mhuten, TaxiCab1729 e apalsikar pelo eclipse do setor 39 em agosto de 2021; [ATarr em junho de 2026](https://www.zooniverse.org/projects/nora-dot-eisner/planet-hunters-tess/talk/2112/4050852), com eclipses primários nos setores 93 e 102, secundários nos setores 39 e 103 e #eccentric-eb; [gulpfumetti em julho de 2026](https://www.zooniverse.org/projects/nora-dot-eisner/planet-hunters-tess/talk/2112/4086339), com período mínimo de 36 dias. Nenhum deu o período. A Note cita essas marcações; a estrela foi encontrada de forma independente |
 | Catálogo de variabilidade do TESS ([Fetherolf et al. 2023](https://doi.org/10.3847/1538-4365/acdee5)) | um sinal de 1,43 dia e 94 partes por milhão no setor 13, muito menor que os eclipses |
 
 O pipeline do TESS da NASA (SPOC) percebeu as quedas. Suas buscas automáticas sinalizaram a estrela sete vezes, cada vez com um trânsito sobre um dos eclipses e um período entre 8,8 e 1.477 dias. Nenhum desses períodos é um dos dois que se ajustam aos quatro eclipses, e nenhum desses sinais virou um TESS Object of Interest.
@@ -85,15 +86,15 @@ A [quarta divulgação de dados](https://www.cosmos.esa.int/web/gaia/dr4) do Gai
 
 ## Como citar
 
-Meneguzzo, M. de S. 2026, HD 170312 is a bright, long-period eclipsing binary, preprint, [doi:10.5281/zenodo.24110892](https://doi.org/10.5281/zenodo.24110892).
+Meneguzzo, M. de S. 2026, HD 170312: a bright eclipsing binary with a period of 69 or 138 days, preprint, [doi:10.5281/zenodo.24110891](https://doi.org/10.5281/zenodo.24110891).
 
 ```bibtex
 @misc{Meneguzzo2026hd170312,
   author = {Meneguzzo, Mauri de Souza},
-  title  = {HD 170312 is a bright, long-period eclipsing binary},
+  title  = {HD 170312: a bright eclipsing binary with a period of 69 or 138 days},
   year   = {2026},
   note   = {Preprint},
-  doi    = {10.5281/zenodo.24110892}
+  doi    = {10.5281/zenodo.24110891}
 }
 ```
 

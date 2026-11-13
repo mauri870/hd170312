@@ -1,6 +1,6 @@
-# HD 170312 is a bright, long-period eclipsing binary
+# HD 170312: a bright eclipsing binary with a period of 69 or 138 days
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24110892.svg)](https://doi.org/10.5281/zenodo.24110892)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24110891.svg)](https://doi.org/10.5281/zenodo.24110891)
 
 [Português](README.pt-BR.md)
 
@@ -18,7 +18,7 @@ On the night of 2026 December 1 to 2 only 68.95 days predicts an eclipse, centre
 
 The eclipses also tell us about the two stars. The brighter star, A, is an evolved F star of about 6,600 K and about 3.5 times the Sun's radius in the TESS Input Catalog. Models of two eclipsing stars fitted to the eclipses need A to be 24 to 34 percent smaller than that. The catalog counts all the system's light as A's, which makes its radius too large, but whether that accounts for the whole difference is not known. The models fit the eclipses equally well at both periods, so the shapes of the eclipses cannot choose between them. The eclipses block 8.5 and 15 percent of the system's light, so the companion, B, must be at least 0.95 times the Sun's radius with the catalog radius of A, and at least 0.62 with the smallest radius of A the models allow, far larger than any planet or brown dwarf, which reach about 0.2. These are lower bounds: the eclipses are rounded, as when one star only grazes the other, and B's own light makes the dips shallower. The eclipses also come in two depths, one for each star passing in front, which means B gives off light of its own. The deep eclipse does not fall halfway between two shallow ones, so the orbit is eccentric: at least 0.10 if the period is 68.95 days, at least 0.34 if it is 137.90.
 
-This repository downloads the public data and reproduces the main numbers of the Research Note in `note/`. Preprint: [doi:10.5281/zenodo.24110892](https://doi.org/10.5281/zenodo.24110892).
+This repository downloads the public data and reproduces the main numbers of the Research Note in `note/`. Preprint: [doi:10.5281/zenodo.24110891](https://doi.org/10.5281/zenodo.24110891).
 
 ![The eclipses of HD 170312 and the periods that fit them](note/figures/events.png)
 
@@ -53,6 +53,7 @@ No catalog lists HD 170312 as an eclipsing binary. These were searched on 2026 N
 | [Gaia](https://www.cosmos.esa.int/web/gaia) DR3 variability tables | no row |
 | [SIMBAD](https://simbad.harvard.edu/simbad/sim-id?Ident=HD+170312) | a single star of type F3 IV/V, with 4 references |
 | [ExoFOP](https://exofop.ipac.caltech.edu/tess/target.php?id=292292315) | no TESS Object of Interest |
+| [Planet Hunters TESS](https://www.zooniverse.org/projects/nora-dot-eisner/planet-hunters-tess/talk/2112/2092270) (Eisner et al. 2021) | volunteers tagged it #eclipsingbinary: mhuten, TaxiCab1729 and apalsikar from the sector 39 eclipse in August 2021; [ATarr in June 2026](https://www.zooniverse.org/projects/nora-dot-eisner/planet-hunters-tess/talk/2112/4050852) with primary eclipses in sectors 93 and 102, secondary eclipses in sectors 39 and 103 and #eccentric-eb; [gulpfumetti in July 2026](https://www.zooniverse.org/projects/nora-dot-eisner/planet-hunters-tess/talk/2112/4086339) with a minimum period of 36 days. None gave the period. The Note states their tags; the star was found independently of them |
 | TESS variability catalog ([Fetherolf et al. 2023](https://doi.org/10.3847/1538-4365/acdee5)) | a 1.43-day signal of 94 parts per million in sector 13, far smaller than the eclipses |
 
 NASA's TESS pipeline (SPOC) did notice the dips. Its automated searches flagged the star seven times, each time with one transit on one of the eclipses and a period between 8.8 and 1,477 days. None of those periods is one of the two that fit all four eclipses, and none of the flags became a TESS Object of Interest.
@@ -85,15 +86,15 @@ Gaia's [fourth data release](https://www.cosmos.esa.int/web/gaia/dr4), expected 
 
 ## Cite
 
-Meneguzzo, M. de S. 2026, HD 170312 is a bright, long-period eclipsing binary, preprint, [doi:10.5281/zenodo.24110892](https://doi.org/10.5281/zenodo.24110892).
+Meneguzzo, M. de S. 2026, HD 170312: a bright eclipsing binary with a period of 69 or 138 days, preprint, [doi:10.5281/zenodo.24110891](https://doi.org/10.5281/zenodo.24110891).
 
 ```bibtex
 @misc{Meneguzzo2026hd170312,
   author = {Meneguzzo, Mauri de Souza},
-  title  = {HD 170312 is a bright, long-period eclipsing binary},
+  title  = {HD 170312: a bright eclipsing binary with a period of 69 or 138 days},
   year   = {2026},
   note   = {Preprint},
-  doi    = {10.5281/zenodo.24110892}
+  doi    = {10.5281/zenodo.24110891}
 }
 ```
 

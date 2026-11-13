@@ -9,8 +9,8 @@ authors:
 license: MIT
 preferred-citation:
   type: article
-  title: HD 170312 is a bright, long-period eclipsing binary
+  title: "HD 170312: a bright eclipsing binary with a period of 69 or 138 days"
   authors:
     - family-names: Meneguzzo
       given-names: Mauri de Souza
-  doi: 10.5281/zenodo.24110892
+  doi: 10.5281/zenodo.24110891
