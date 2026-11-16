@@ -4,6 +4,7 @@ For each period P = DeltaT / N the three complete eclipses give an ephemeris, an
 dates of the sector (https://heasarc.gsfc.nasa.gov/docs/tess/sector.html)."""
 import numpy as np
 
+from hd170312.data import STAR
 from hd170312.eclipses import assign_cycles, fit_ephemeris, predict
 
 SECTOR_114 = (4449.5, 4478.5)  # BTJD at 0 h UT of the planned start and stop
@@ -37,11 +38,25 @@ def forecast(events, divisors=DIVISORS, window=SECTOR_114):
     return rows
 
 
-def calendar_date(btjd):
-    """The calendar date (UTC) of a BTJD, from BJD = BTJD + 2457000 read as a Julian date of the TDB scale."""
+def arrival_utc(btjd):
+    """The UTC time at which light that reaches the barycentre at BTJD (BJD_TDB - 2457000) arrives at the geocentre: t_observed = t_barycentric - light_travel_time(t_observed), iterated three times.
+
+    https://docs.astropy.org/en/stable/time/index.html#barycentric-and-heliocentric-light-travel-time-corrections"""
+    from astropy.coordinates import EarthLocation, SkyCoord
     from astropy.time import Time
 
-    return Time(btjd + JD_OFFSET, format="jd", scale="tdb").utc.strftime("%Y-%m-%d")
+    star = SkyCoord(*STAR, unit="deg")
+    geocentre = EarthLocation.from_geocentric(0, 0, 0, unit="m")
+    barycentric = Time(btjd + JD_OFFSET, format="jd", scale="tdb")
+    observed = barycentric
+    for _ in range(3):
+        observed = barycentric - observed.light_travel_time(star, kind="barycentric", location=geocentre)
+    return observed.utc
+
+
+def calendar_date(btjd):
+    """The calendar date (UTC) at the geocentre of an eclipse at BTJD, as arrival_utc."""
+    return arrival_utc(btjd).strftime("%Y-%m-%d")
 
 
 def deciding_eclipse(rows, window=SECTOR_114):
@@ -72,9 +87,7 @@ def eccentricity(rows):
 
 
 def only_shortest(events, low, high, shortest=26, longer=13):
-    """The eclipses of each kind that P = separation / shortest predicts between BTJD low and high and P = separation / longer does not (none of its eclipses of the same kind within 0.5 d), with their errors and UTC dates and times."""
-    from astropy.time import Time
-
+    """The eclipses of each kind that P = separation / shortest predicts between BTJD low and high and P = separation / longer does not (none of its eclipses of the same kind within 0.5 d), with their errors and their UTC dates and times at the geocentre."""
     short, long_ = _fit(events, shortest), _fit(events, longer)
     rows = []
     for kind in short["kinds"]:
@@ -85,7 +98,7 @@ def only_shortest(events, low, high, shortest=26, longer=13):
             time, error = predict(short, kind, cycle)
             also = any(abs(time - other) < 0.5 for other in others)
             if not also:
-                utc = Time(time + JD_OFFSET, format="jd", scale="tdb").utc
+                utc = arrival_utc(time)
                 rows.append({"kind": kind, "cycle": cycle, "time": time, "error": error, "date": utc.strftime("%Y-%m-%d"), "utc": utc.strftime("%Y-%m-%d %H:%M"), "also_137_90": also})
     return sorted(rows, key=lambda row: row["time"])
 
